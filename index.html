@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A stimulus-organism-response model of willingness to buy from advertising speech using voice quality</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+
+<header>
+
+
+	<h1>
+		<p>Do reviewer attributes moderate perceived emotions in determining<br>purchase intention from spoken or textual product word-of-mouth?</p>
+	</h1>	
+
+	<h2>
+		<!-- <p>Mizuki Nagano<sup>1</sup>, Yusuke Ijima<sup>1</sup>, Sadao Hiroya<sup>2</sup> and Nozomi Kobayashi<sup>1</sup></p> -->
+		<p>Anonymous submission to Interspeech 2024</p>
+	</h2>	
+
+<!-- 	<h3>
+		<p><sup>1</sup>NTT Human Informatics Laboratories, Japan<br>
+			<sup>2</sup>NTT Communication Science Laboratories, Japan</p>
+	</h3>	 -->
+
+
+</header>
+
+
+<main>
+
+
+
+
+
+
+<div id="audio" class="bottom">
+
+  <h2>Examples of word-of-mouth(WOM) speech (Section 2.2)</h2>
+<!--   <ul>
+	<li>The reference speech from Female1 and Female2 were used for conditioning spectrogram and duration respectively.</li>
+	<li>Please confirm that the proposed method can synthesize speech whose speech rhythm is close to that of the reference speech for duration while maintaining voice quality of the reference speech for spectrogram. </li>
+  </ul> -->
+
+
+
+
+<table align="center" class="bottom">
+    <tr>
+      <th>Female speech</th>
+      <th>Sentence #4</th>
+      <th>Sentence #6</th>      
+      <th>Sentence #10</th> 
+    </tr>
+    <tr>
+      <td>Speaker #1 (Aged 20-34)</td>
+      <td><audio src="./audio/F4_A_4.wav" controls></audio></td>
+      <td><audio src="./audio/F4_A_6.wav" controls></audio></td>
+      <td><audio src="./audio/F4_A_10.wav" controls></audio></td>
+    </tr>
+    <tr>
+      <td>Speaker #2 (Aged 35-49)</td>
+      <td><audio src="./audio/F9_B_4.wav" controls></audio></td>
+      <td><audio src="./audio/F9_B_6.wav" controls></audio></td>
+      <td><audio src="./audio/F9_B_10.wav" controls></audio></td>
+    </tr>
+    <tr>
+      <td>Speaker #3 (Aged 50 or over)</td>
+      <td><audio src="./audio/F24_C_4.wav" controls></audio></td>
+      <td><audio src="./audio/F24_C_6.wav" controls></audio></td>
+      <td><audio src="./audio/F24_C_10.wav" controls></audio></td>
+    </tr>
+  </table>
+
+
+
+
+<table align="center" class="bottom">
+    <tr>
+      <th>Male speech</th>
+      <th>Sentence #3</th>
+      <th>Sentence #7</th>      
+      <th>Sentence #11</th> 
+    </tr>
+    <tr>
+      <td>Speaker #1 (Aged 20-34)</td>
+      <td><audio src="./audio/M3_A_3.wav" controls></audio></td>
+      <td><audio src="./audio/M3_A_7.wav" controls></audio></td>
+      <td><audio src="./audio/M3_A_11.wav" controls></audio></td>
+    </tr>
+    <tr>
+      <td>Speaker #2 (Aged 35-49)</td>
+      <td><audio src="./audio/M11_B_3.wav" controls></audio></td>
+      <td><audio src="./audio/M11_B_7.wav" controls></audio></td>
+      <td><audio src="./audio/M11_B_11.wav" controls></audio></td>
+    </tr>
+    <tr>
+      <td>Speaker #3 (Aged 50 or over)</td>
+      <td><audio src="./audio/M18_C_3.wav" controls></audio></td>
+      <td><audio src="./audio/M18_C_7.wav" controls></audio></td>
+      <td><audio src="./audio/M18_C_11.wav" controls></audio></td>
+    </tr>
+  </table>
+
+
+
+
+
+<!-- 
+<table>
+	<tbody>
+		<tr>
+			<td style="text-align:center">x-vector (sep)</td>
+			<td style="text-align:center">x-vector (sep)</td>
+			<td style="text-align:center">HuBERT (sep, LSTM)</td>
+			<td style="text-align:center">x-vector (sep)</td>
+
+		</tr>
+		<tr>
+			<td style="text-align:center">Female child</td>
+			<td><audio src="./F10003_ref.wav" controls></audio></td>
+			<td><audio src="./F10003_p_x.wav" controls></td>
+			<td><audio src="./F10003_p_ssl.wav" controls></td>
+			<td><audio src="./F10003_np_x.wav" controls></td>
+			<td><audio src="./F10003_np_ssl.wav" controls></td>
+			<td><audio src="./F10003_np_ref.wav" controls></td>				
+		</tr>
+		<tr>
+			<td style="text-align:center">Male child</td>
+			<td><audio src="./M10004_ref.wav" controls></audio></td>
+			<td><audio src="./M10004_p_x.wav" controls></td>
+			<td><audio src="./M10004_p_ssl.wav" controls></td>
+			<td><audio src="./M10004_np_x.wav" controls></td>
+			<td><audio src="./M10004_np_ssl.wav" controls></td>
+			<td><audio src="./M10004_np_ref.wav" controls></td>								
+		</tr>
+		<tr>
+			<td style="text-align:center">Female adult</td>
+			<td><audio src="./F2003_ref.wav" controls></audio></td>
+			<td><audio src="./F2003_p_x.wav" controls></td>
+			<td><audio src="./F2003_p_ssl.wav" controls></td>
+			<td><audio src="./F2003_np_x.wav" controls></td>
+			<td><audio src="./F2003_np_ssl.wav" controls></td>
+			<td><audio src="./F2003_np_ref.wav" controls></td>							
+		</tr>
+		<tr>
+			<td style="text-align:center">Male adult</td>
+			<td><audio src="./M40005_ref.wav" controls></audio></td>
+			<td><audio src="./M40005_p_x.wav" controls></td>
+			<td><audio src="./M40005_p_ssl.wav" controls></td>
+			<td><audio src="./M40005_np_x.wav" controls></td>
+			<td><audio src="./M40005_np_ssl.wav" controls></td>
+			<td><audio src="./M40005_np_ref.wav" controls></td>								
+		</tr>
+
+
+	</tbody>
+</table> -->
+
+</div>
+
+
+<br>
+<br>
+
+<!-- 
+<div id="about" class="bottom">
+  <h2>About this page</h2>
+  <ul>
+	<li>HiFi-GAN was used for all speech samples generation.</li>
+	<li>All speakers in this page are chosen from test data.</li>
+  </ul>
+</div> -->
+
+
+<div id="sentence" class="bottom">
+  <!-- <h2>Advertising sentences (Section 2.2)</h2> -->
+  <h2>Examples of WOM texts (Section 2.2)</h2>	
+  <p>The Japanese WOM texts used in the experiment are translated below.</p>
+  <ol>
+	<li>(Digital camera) It captures high-quality, clear photos, with the night mode performance being particularly impressive. The battery life is long, offering peace of mind when outdoors.</li>
+	<li>(Smartphone) Its large screen makes video viewing enjoyable, and apps run smoothly.</li>
+	<li>(Sandwich maker) Easy to use, it makes toast fluffy and delicious.</li>
+	<li>(Wall sticker) Easy to handle, it can be removed cleanly without leaving any residue.</li>
+	<li>(Planner) The ink doesn't bleed, and it offers a pleasant writing experience.</li>
+	<li>(Body fat Scale) Provides detailed data such as body fat percentage and muscle mass, aiding in health management.</li>	
+	<li>(Insect repellent) Features a refreshing scent without any unpleasant odors, easy to use. It's gentle on the skin, without causing itching or redness, ensuring safe use.</li>
+	<li>(Laundry detergent) Minimizes color fading, allowing safe washing of favorite clothes. Clothes become soft after washing, enhancing comfort.</li>
+	<li>(Hair wax) Offers a smooth touch while firmly holding the style for a long duration.</li>
+	<li>(Pajamas) The soft fabric gently fits the skin. Its simple and stylish design offers an exceptional wearing experience.</li>
+	<li>(Bag) Made of high-quality material with excellent durability. Well-equipped with compartments and pockets for easy organization.</li>
+	<li>(PC mouse) Provides a satisfying click feel and smooth scrolling.</li>	
+
+  </ol>
+</div>	
+
+
+<!-- 
+Digital Camera: It captures high-quality, clear photos, with the night mode performance being particularly impressive. The battery life is long, offering peace of mind when outdoors.
+
+Smartphone: Its large screen makes video viewing enjoyable, and apps run smoothly.
+
+Sandwich Maker: Easy to use, it makes toast fluffy and delicious.
+
+Wall Sticker: Easy to handle, it can be removed cleanly without leaving any residue.
+
+Planner: The ink doesn't bleed, and it offers a pleasant writing experience.
+
+Body Fat Scale: Provides detailed data such as body fat percentage and muscle mass, aiding in health management.
+
+Insect Repellent: Features a refreshing scent without any unpleasant odors, easy to use. It's gentle on the skin, without causing itching or redness, ensuring safe use.
+
+Laundry Detergent: Minimizes color fading, allowing safe washing of favorite clothes. Clothes become soft after washing, enhancing comfort.
+
+Hair Wax: Offers a smooth touch while firmly holding the style for a long duration.
+
+Pajamas: The soft fabric gently fits the skin. Its simple and stylish design offers an exceptional wearing experience.
+
+Bag: Made of high-quality material with excellent durability. Well-equipped with compartments and pockets for easy organization.
+
+PC Mouse: Provides a satisfying click feel and smooth scrolling. -->
+
+
+</main>
+
+
+</body>
+
+
+</html>
